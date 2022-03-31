@@ -1,0 +1,48 @@
+﻿@{
+}
+
+@model MySQLFun.Models.Bowler
+
+<head>
+
+</head>
+
+<body>
+    <form style="text-align:center" method="post">
+        <div asp-validation-summary="All"></div>
+
+        <fieldset width="0px;">
+            <legend>Edit Bowler</legend>
+            <input asp-for="BowlerID" type="hidden" name="bowlerid" required /><br />
+            <br />
+            <label asp-for="BowlerFirstName">First Name:</label>
+            <input asp-for="BowlerFirstName" type="text" name="BowlerFirstName" required /><br />
+            <br />
+            <label asp-for="BowlerMiddleInit">Middle:</label>
+            <input asp-for="BowlerMiddleInit" name="BowlerMiddleInit" required /><br />
+            <br />
+            <label asp-for="BowlerLastName">Last Name:</label>
+            <input asp-for="BowlerLastName" type="text" name="BowlerLastName" required /><br />
+            <br />
+            <label asp-for="BowlerAddress">Address:</label>
+            <input asp-for="BowlerAddress" type="text" name="BowlerAddress" required /><br />
+            <br />
+            <label asp-for="BowlerCity">City:</label>
+            <input asp-for="BowlerCity" type="text" name="BowlerCity" required /><br />
+            <br />
+            <label asp-for="BowlerState">State:</label>
+            <input asp-for="BowlerState" type="text" name="BowlerState" required /><br />
+            <br />
+            <label asp-for="BowlerZip">Zip:</label>
+            <input asp-for="BowlerZip" type="text" name="BowlerZip" required /><br />
+            <br />
+            <label asp-for="BowlerPhoneNumber">Phone Number:</label>
+            <input asp-for="BowlerPhoneNumber" type="text" name="BowlerPhoneNumber" required /><br />
+            <br />
+            <label asp-for="TeamID">Team Id:</label>
+            <input asp-for="TeamID" type="text" name="teamid" required /><br />
+            <br />
+        </fieldset>
+        <button type="submit">Save Changes</button>
+    </form>
+</body>

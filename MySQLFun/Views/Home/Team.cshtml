@@ -1,0 +1,70 @@
+﻿@{
+}
+
+@model List<Bowler>
+
+<div class="row m-1 p-1">
+
+    <div class="col-2">
+        <h3>Teams</h3><br />
+
+        <a style="background-color:aquamarine; color:black" class="btn btn-block" asp-action="Index">All Teams</a><br />
+
+        @foreach (var t in ViewBag.Teams)
+        {
+            if (t == ViewBag.Team)
+            {
+                <a class="btn btn-block" style="background-color:black; color:white" asp-action="Team" asp-route-TeamId="@t.TeamID">@t.TeamName</a><br />
+            }
+            else
+            {
+                <a class="btn btn-block" style="background-color:aquamarine; color:black" asp-action="Team" asp-route-TeamId="@t.TeamID">@t.TeamName</a><br />
+            }
+        }
+    </div>
+
+    <div class="col-10">
+
+        <h1 style="text-align:center">@ViewBag.Team.TeamName</h1>
+
+        <table class="table table-bordered table-striped">
+
+            <thead class="font-weight-bold">
+                <tr>
+                    <td>Id</td>
+                    <td>First Name</td>
+                    <td>Middle</td>
+                    <td>Last Name</td>
+                    <td>Address</td>
+                    <td>City</td>
+                    <td>State</td>
+                    <td>Zip</td>
+                    <td>Phone #</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var b in Model)
+                {
+                    <tr>
+                        <td>@b.BowlerID</td>
+                        <td>@b.BowlerFirstName</td>
+                        <td>@b.BowlerMiddleInit</td>
+                        <td>@b.BowlerLastName</td>
+                        <td>@b.BowlerAddress</td>
+                        <td>@b.BowlerCity</td>
+                        <td>@b.BowlerState</td>
+                        <td>@b.BowlerZip</td>
+                        <td>@b.BowlerPhoneNumber</td>
+
+                        <td><a style="background-color:lightcoral; color:black" class="btn btn-block" asp-controller="Home" asp-action="Edit" asp-route-BowlerId="@b.BowlerID">Edit</a></td>
+                        <td><a style="background-color:red; color:black" class="btn btn-block" asp-controller="Home" asp-action="Delete" asp-route-BowlerId="@b.BowlerID">Delete</a></td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
